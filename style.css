@@ -1,0 +1,209 @@
+@font-face {
+  font-family: 'Times Newer Roman';
+  src: url('assets/fonts/TimesNewerRoman-Bold.woff2') format('woff2');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #1a1a1a;
+  overflow-x: hidden;
+}
+
+.scale-wrap {
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+}
+
+.canvas {
+  position: relative;
+  width: 1728px;
+  height: 1368px;
+  background: #fff;
+  transform-origin: top left;
+  flex-shrink: 0;
+}
+
+.bg-photo {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  pointer-events: none;
+}
+
+.bg-overlay {
+  position: absolute;
+  left: -38px;
+  top: -2px;
+  width: 1843px;
+  height: 1384px;
+  background: rgba(217, 217, 217, 0.35);
+}
+
+.title {
+  position: absolute;
+  left: 666px;
+  top: 59px;
+  margin: 0;
+  font-family: 'Times Newer Roman', Georgia, 'Times New Roman', serif;
+  font-weight: bold;
+  font-size: 64px;
+  color: #000;
+  white-space: nowrap;
+}
+
+.deco {
+  position: absolute;
+  pointer-events: none;
+}
+
+.deco-mountain {
+  left: 706px;
+  top: 163px;
+  width: 316px;
+  height: 141px;
+  object-fit: cover;
+}
+
+.deco-bear {
+  left: 1470px;
+  top: 103px;
+  width: 162px;
+  height: 176px;
+  object-fit: contain;
+}
+
+.box {
+  position: absolute;
+  background: #ff3;
+}
+
+.box-intro {
+  left: 233px;
+  top: 372px;
+  width: 759px;
+  height: 306px;
+  padding: 0;
+}
+
+.intro-title {
+  position: absolute;
+  left: 65px;
+  top: 60px;
+  margin: 0;
+  font-family: 'Comic Sans MS', 'Comic Sans', cursive;
+  font-weight: bold;
+  font-size: 48px;
+  color: #000;
+  white-space: nowrap;
+}
+
+.intro-text {
+  position: absolute;
+  left: 56px;
+  top: 163px;
+  margin: 0;
+  width: 639px;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 24px;
+  color: #000;
+  line-height: normal;
+}
+
+.photo-main {
+  position: absolute;
+  left: 1092px;
+  top: 316px;
+  width: 402px;
+  height: 537px;
+  object-fit: cover;
+  border: 4px solid #0c9224;
+}
+
+.box-notice {
+  left: 1043px;
+  top: 923px;
+  width: 709px;
+  height: 157px;
+}
+
+.notice-text {
+  position: absolute;
+  left: 62px;
+  top: 33px;
+  margin: 0;
+  width: 586px;
+  font-family: 'VT323', monospace;
+  font-size: 32px;
+  color: #0009ff;
+  text-align: center;
+  line-height: normal;
+}
+
+.notice-text .underline {
+  text-decoration: underline;
+  text-decoration-skip-ink: none;
+}
+
+.nav {
+  position: absolute;
+  top: 869px;
+  left: 0;
+  width: 100%;
+  height: 40px;
+}
+
+.nav-link {
+  position: absolute;
+  font-family: 'Times Newer Roman', Georgia, 'Times New Roman', serif;
+  font-weight: bold;
+  font-size: 32px;
+  color: #0009ff;
+  text-decoration: underline;
+  text-decoration-skip-ink: none;
+  white-space: nowrap;
+}
+
+.nav a:nth-child(1) { left: 300px; }
+.nav a:nth-child(2) { left: 515px; }
+.nav a:nth-child(3) { left: 762px; }
+
+.deco-stamp {
+  left: 217px;
+  top: 785px;
+  width: 298px;
+  height: 265px;
+  object-fit: contain;
+}
+
+.deco-bdayhat {
+  left: 559px;
+  top: 771px;
+  width: 82px;
+  height: 98px;
+  object-fit: contain;
+}
+
+.deco-pobox {
+  left: 825px;
+  top: 785px;
+  width: 63px;
+  height: 84px;
+  object-fit: contain;
+}
+
+@media (max-width: 1728px) {
+  .canvas {
+    margin: 0 auto;
+  }
+}
