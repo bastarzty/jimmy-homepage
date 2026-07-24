@@ -358,3 +358,105 @@ body {
     white-space: nowrap;
   }
 }
+
+/* ---------- 订阅弹窗 ---------- */
+
+.subscribe-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  z-index: 1000;
+}
+
+.subscribe-overlay.active {
+  display: flex;
+}
+
+.subscribe-card {
+  position: relative;
+  background: #fff;
+  border: 4px solid #0009ff;
+  max-width: 420px;
+  width: 100%;
+  padding: 40px 28px 32px;
+  text-align: center;
+  border-radius: 4px;
+}
+
+.subscribe-close {
+  position: absolute;
+  top: 6px;
+  right: 12px;
+  background: none;
+  border: none;
+  font-size: 30px;
+  line-height: 1;
+  color: #999;
+  cursor: pointer;
+  font-family: Arial, sans-serif;
+}
+
+.subscribe-close:hover {
+  color: #0009ff;
+}
+
+.subscribe-title {
+  display: inline-block;
+  margin: 0 0 8px;
+  font-family: 'Times Newer Roman', Georgia, 'Times New Roman', serif;
+  font-weight: bold;
+  font-size: 26px;
+  color: #0009ff;
+  padding-bottom: 8px;
+  border-bottom: 3px solid #ff3;
+}
+
+.subscribe-desc {
+  margin: 20px 0 22px;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 16px;
+  color: #000;
+  line-height: 1.6;
+}
+
+.subscribe-form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.subscribe-input {
+  font-family: 'VT323', monospace;
+  font-size: 22px;
+  padding: 10px 14px;
+  border: 2px solid #0009ff;
+  border-radius: 2px;
+  color: #000;
+}
+
+.subscribe-input::placeholder {
+  color: #8891c9;
+}
+
+.subscribe-submit {
+  font-family: 'Times Newer Roman', Georgia, 'Times New Roman', serif;
+  font-weight: bold;
+  font-size: 18px;
+  letter-spacing: 1px;
+  color: #0009ff;
+  background: #ff3;
+  border: 2px solid #0009ff;
+  border-radius: 2px;
+  padding: 11px;
+  cursor: pointer;
+  transition: background .15s, color .15s;
+}
+
+.subscribe-submit:hover {
+  background: #0009ff;
+  color: #ff3;
+}

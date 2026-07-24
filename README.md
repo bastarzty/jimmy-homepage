@@ -37,6 +37,26 @@ jimmy-page/
   3. 把文件重命名为 `TimesNewerRoman-Bold.woff2`，放进 `assets/fonts/` 文件夹
   4. 完成，`style.css` 里已经写好了对应的 `@font-face`，会自动生效
 
+## 订阅弹窗接入 Kit（发早鸟折扣/活动通知用）
+
+点击 "Subscribe Me"（导航栏、手机版菜单、还有通知框里的 "subscribe" 文字）会弹出订阅弹窗，收集邮箱。要让它真的能收邮箱、以后能群发早鸟折扣通知，需要接一个免费的 Kit 账号：
+
+1. 去 https://kit.com 免费注册一个账号（原名 ConvertKit）
+2. 登录后左侧菜单找 **Grow → Landing Pages & Forms**
+3. 点 **Create New → Form**，选一个简单样式（哪怕跟我们做的完全不一样也没关系，样式我们不用，只要拿到表单ID）
+4. 表单建好后，点右上角 **Embed**，会看到一段类似这样的代码：
+   ```html
+   <form action="https://app.kit.com/forms/1234567/subscriptions" method="post">
+   ```
+5. 把这串数字（比如 `1234567`）复制下来
+6. 打开 `index.html`，把里面的 `REPLACE_WITH_YOUR_FORM_ID` 替换成你的表单ID（用文本编辑器 Ctrl+F / Cmd+F 搜索这个词就能定位到）
+
+替换完提交推送后，弹窗里提交邮箱就会真的进到你的 Kit 联系人列表里。之后11月活动通知/早鸟折扣，直接在 Kit 后台 **Broadcasts** 里写一封邮件群发给所有订阅者就行。
+
+注意：提交表单后，浏览器会跳转到 Kit 自带的一个确认页面（默认样式比较朴素）。如果想让这个确认页也保持复古风格，可以在 Kit 后台的表单设置里，把 "Success message" 或者跳转链接改成自定义内容，这个后续需要的话我可以帮你一起弄。
+
+
+
 ## 部署到 GitHub + Netlify（免费）
 
 ### 第一步：传到 GitHub
