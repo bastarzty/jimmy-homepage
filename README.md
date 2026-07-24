@@ -59,7 +59,7 @@ jimmy-page/
 
 ## 2025 Archive 页面
 
-`archive.html` 是明信片墙页面，目前放了你测试的65张（`assets/archive/card-001.jpg` ~ `card-065.jpg`）。逻辑是：
+`archive.html` 是明信片墙页面，目前放了你测试的65张（`assets/archive/card-001.png` ~ `card-065.png`）。逻辑是：
 
 - 打开是瀑布流墙，每次刷新顺序随机打乱
 - 点开一张，进入大图详情页，右边是"继续看看"的小格子墙（可以一直点下去逛）
@@ -68,7 +68,7 @@ jimmy-page/
 
 ### 以后凑齐180张之后怎么加
 
-1. 把新照片按 `card-066.jpg`、`card-067.jpg`……这样接着编号，放进 `assets/archive/` 文件夹（要求：文件名三位数字，比如 `card-100.jpg` 而不是 `card-100.png`，格式统一用 jpg）
+1. 把新照片按 `card-066.png`、`card-067.png`……这样接着编号，放进 `assets/archive/` 文件夹（要求：文件名三位数字，比如 `card-100.png`，格式统一用 png）
 2. 打开 `archive.js`，把最上面的 `const TOTAL_CARDS = 65;` 改成 `180`
 3. 保存、推送，齐活
 

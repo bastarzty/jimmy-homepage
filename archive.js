@@ -11,7 +11,7 @@ function cardId(n) {
 }
 
 function cardSrc(n) {
-  return `${CARD_PREFIX}${cardId(n)}.jpg`;
+  return `${CARD_PREFIX}${cardId(n)}.png`;
 }
 
 // ---------- Supabase（点赞持久化） ----------
@@ -155,7 +155,7 @@ shareBtn.addEventListener('click', (e) => {
 downloadOpt.addEventListener('click', () => {
   const a = document.createElement('a');
   a.href = cardSrc(currentId);
-  a.download = `jimmy-birthday-card-${cardId(currentId)}.jpg`;
+  a.download = `jimmy-birthday-card-${cardId(currentId)}.png`;
   document.body.appendChild(a);
   a.click();
   a.remove();
@@ -173,9 +173,9 @@ shareLinkOpt.addEventListener('click', async () => {
   } else {
     try {
       await navigator.clipboard.writeText(url);
-      alert('链接已复制～');
+      alert('Link copied!');
     } catch (e) {
-      prompt('复制这个链接：', url);
+      prompt('Copy this link:', url);
     }
   }
   shareMenu.classList.remove('active');
