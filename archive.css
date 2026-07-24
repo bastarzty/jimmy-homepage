@@ -1,0 +1,225 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #fdfaf3;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.a-header {
+  text-align: center;
+  padding: 32px 16px 24px;
+  border-bottom: 3px solid #0009ff;
+  background: #fff;
+}
+
+.a-home-link {
+  display: inline-block;
+  margin-bottom: 12px;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 15px;
+  color: #0009ff;
+  text-decoration: underline;
+}
+
+.a-title {
+  margin: 0 0 8px;
+  font-family: 'Times Newer Roman', Georgia, 'Times New Roman', serif;
+  font-weight: bold;
+  font-size: 40px;
+  color: #000;
+}
+
+.a-subtitle {
+  margin: 0;
+  font-family: 'VT323', monospace;
+  font-size: 22px;
+  color: #0009ff;
+}
+
+main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 24px 16px 60px;
+}
+
+/* ---------- 瀑布流墙 ---------- */
+
+.a-wall-grid {
+  columns: 200px;
+  column-gap: 12px;
+}
+
+.a-wall-item {
+  display: block;
+  width: 100%;
+  height: auto;
+  break-inside: avoid;
+  margin-bottom: 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  border: 1px solid #e5e0d0;
+  transition: transform .15s;
+}
+
+.a-wall-item:hover {
+  transform: scale(1.02);
+}
+
+/* ---------- 详情页 ---------- */
+
+.a-detail-wrap {
+  position: relative;
+}
+
+.a-back-btn {
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  border: 2px solid #0009ff;
+  background: #fff;
+  color: #0009ff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+.a-back-btn:hover {
+  background: #0009ff;
+  color: #fff;
+}
+
+.a-detail-grid {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 32px;
+  align-items: start;
+}
+
+.a-detail-main {
+  position: sticky;
+  top: 20px;
+}
+
+.a-big-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+  border: 1px solid #e5e0d0;
+}
+
+.a-actions {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-top: 14px;
+}
+
+.a-action-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 15px;
+  color: #000;
+  padding: 4px;
+}
+
+#likeIcon {
+  transition: stroke .15s, fill .15s;
+}
+
+#likeIcon.liked {
+  stroke: #e0356b;
+  fill: #e0356b;
+}
+
+.a-share-wrap {
+  position: relative;
+}
+
+.a-share-menu {
+  display: none;
+  position: absolute;
+  top: 110%;
+  left: 0;
+  background: #fff;
+  border: 1px solid #0009ff;
+  border-radius: 4px;
+  overflow: hidden;
+  min-width: 160px;
+  z-index: 10;
+}
+
+.a-share-menu.active {
+  display: block;
+}
+
+.a-share-menu button {
+  display: block;
+  width: 100%;
+  text-align: left;
+  padding: 10px 14px;
+  background: #fff;
+  border: none;
+  border-bottom: 1px solid #eee;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.a-share-menu button:last-child {
+  border-bottom: none;
+}
+
+.a-share-menu button:hover {
+  background: #f5f5f5;
+}
+
+.a-more-grid {
+  columns: 110px;
+  column-gap: 8px;
+}
+
+.a-more-grid img {
+  display: block;
+  width: 100%;
+  height: auto;
+  break-inside: avoid;
+  margin-bottom: 8px;
+  border-radius: 4px;
+  cursor: pointer;
+  border: 1px solid #e5e0d0;
+}
+
+@media (max-width: 768px) {
+  .a-title {
+    font-size: 28px;
+  }
+
+  .a-subtitle {
+    font-size: 18px;
+  }
+
+  .a-detail-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .a-detail-main {
+    position: static;
+  }
+
+  .a-wall-grid {
+    columns: 140px;
+  }
+}

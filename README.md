@@ -57,6 +57,39 @@ jimmy-page/
 
 
 
+## 2025 Archive 页面
+
+`archive.html` 是明信片墙页面，目前放了你测试的65张（`assets/archive/card-001.jpg` ~ `card-065.jpg`）。逻辑是：
+
+- 打开是瀑布流墙，每次刷新顺序随机打乱
+- 点开一张，进入大图详情页，右边是"继续看看"的小格子墙（可以一直点下去逛）
+- 详情页有点赞（❤️变红+计数）和分享（下载照片 / 分享这张的专属链接）
+- 分享出去的链接（形如 `archive.html?card=037`）打开后会直接跳到那一张的详情页，不用重新翻找
+
+### 以后凑齐180张之后怎么加
+
+1. 把新照片按 `card-066.jpg`、`card-067.jpg`……这样接着编号，放进 `assets/archive/` 文件夹（要求：文件名三位数字，比如 `card-100.jpg` 而不是 `card-100.png`，格式统一用 jpg）
+2. 打开 `archive.js`，把最上面的 `const TOTAL_CARDS = 65;` 改成 `180`
+3. 保存、推送，齐活
+
+### 接入 Supabase（让点赞数真正存起来、所有人看到一样的数字）
+
+现在点赞是"假的"——每个人看到的赞数只在自己这次打开页面时临时算，刷新就没了。要让它变成真实、所有人共享的数字：
+
+1. 去 https://supabase.com 免费注册一个账号，新建一个项目（Project）
+2. 项目建好后，左侧菜单点 **SQL Editor**，新建一个 Query，把项目里 `supabase-setup.sql` 这个文件的全部内容粘贴进去，点 **Run** 执行一次（这一步是在数据库里建表和写好加一逻辑）
+3. 左侧菜单点 **Project Settings → API**，找到两个值：
+   - **Project URL**（形如 `https://xxxxx.supabase.co`）
+   - **anon public** 这一栏的 key（一长串字符）
+4. 打开 `archive.js`，把最上面这两行换成你自己的：
+   ```js
+   const SUPABASE_URL = 'REPLACE_WITH_YOUR_SUPABASE_URL';
+   const SUPABASE_ANON_KEY = 'REPLACE_WITH_YOUR_SUPABASE_ANON_KEY';
+   ```
+5. 保存、推送。之后点赞就是真实存到 Supabase 数据库里的了，任何人打开页面看到的都是同一个数字
+
+
+
 ## 部署到 GitHub + Netlify（免费）
 
 ### 第一步：传到 GitHub
