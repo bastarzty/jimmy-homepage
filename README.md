@@ -49,9 +49,9 @@ jimmy-page/
    <form action="https://app.kit.com/forms/1234567/subscriptions" method="post">
    ```
 5. 把这串数字（比如 `1234567`）复制下来
-6. 打开 `index.html`，把里面的 `REPLACE_WITH_YOUR_FORM_ID` 替换成你的表单ID（用文本编辑器 Ctrl+F / Cmd+F 搜索这个词就能定位到）
+6. 当前页面已经接入 Kit 表单 ID `9721444`。如果以后换表单，打开 `index.html`，把 `https://app.kit.com/forms/9721444/subscriptions` 里的数字替换成新的表单 ID 即可。
 
-替换完提交推送后，弹窗里提交邮箱就会真的进到你的 Kit 联系人列表里。之后11月活动通知/早鸟折扣，直接在 Kit 后台 **Broadcasts** 里写一封邮件群发给所有订阅者就行。
+当前表单地址提交后会进到你的 Kit 联系人列表里。之后11月活动通知/早鸟折扣，直接在 Kit 后台 **Broadcasts** 里写一封邮件群发给所有订阅者就行。
 
 注意：提交表单后，浏览器会跳转到 Kit 自带的一个确认页面（默认样式比较朴素）。如果想让这个确认页也保持复古风格，可以在 Kit 后台的表单设置里，把 "Success message" 或者跳转链接改成自定义内容，这个后续需要的话我可以帮你一起弄。
 
